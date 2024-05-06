@@ -31,7 +31,7 @@ class Solution(object):
                 return [nums.index(nums2[l]) , nums.index(nums2[r])]
             
         """
-        # best Solutiom 
+        # best Solution
         numToIndex = {}
         for i in range(len(nums)):
             if target - nums[i] in numToIndex:
