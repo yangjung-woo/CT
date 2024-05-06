@@ -31,6 +31,13 @@ class Solution(object):
                 return [nums.index(nums2[l]) , nums.index(nums2[r])]
             
         """
+        # best Solutiom 
+        numToIndex = {}
+        for i in range(len(nums)):
+            if target - nums[i] in numToIndex:
+                return [numToIndex[target - nums[i]], i]
+            numToIndex[nums[i]] = i
+        return []
 
 nums = [3,3]
 target = 6
