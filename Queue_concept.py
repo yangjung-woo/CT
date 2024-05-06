@@ -1,6 +1,6 @@
 from collections import deque
 queue = deque()
-# deque  양쪽에서 삽입 및 삭제 가능
+# deque  양쪽에서 삽입 및 삭제 가능 , BFS에 함께 사용 
 
 queue.append(1)  # queue 
 queue.popleft(1)  
