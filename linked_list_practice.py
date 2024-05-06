@@ -27,7 +27,11 @@ class LinkedList(object):
             current.next = new_node
 
     def get(self,idx):
-        pass
+        current = self.head
+        for i in range(idx):
+            current= current.next
+        return current.value  # 시간복잡도? O(n)
+
     def insert(self,idx,value):
         pass
     def delete(self,idx):
