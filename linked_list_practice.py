@@ -15,22 +15,23 @@ second.next =third
 class LinkedList(object):
     def __init__(self):
         self.head =None # linked list 생성시 반드시 head는 최초 노드를 가리켜야 한다
+        self.tail = None # 성능 개선을 위한 tail , append_back 에 이용
     def append(self,value):
         new_node = Node(value) # 새 노드 생성
 
-        if self.head == None:# 최초  head 가 아무것도 가리키지 않음 
+        if self.head == None:# 최초  head 가 아무것도 가리키지 않음
             self.head = new_node
+            self.tail = new_node
         else:
-            current = self.head
-            while(current.next): # link 따라 탐색 
-                current = current.next
-            current.next = new_node
+            self.tail.next = new_node
+            self.tail = self.tail.next
+
 
     def get(self,idx):
         current = self.head
         for i in range(idx):
             current= current.next
-        return current.value  # 시간복잡도? O(n)
+        return current.value  # get 시간복잡도? O(n)
 
     def insert(self,idx,value):
         pass
