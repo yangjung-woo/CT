@@ -2,4 +2,3 @@
 
 LeetCode 문제 풀이 준비 
 
-# CT
