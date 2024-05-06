@@ -13,12 +13,11 @@ class BrowserHistory(object):
         self.current = ListNode(val=homepage)
         
         
-    def visit(self, url):
+    def visit(self, url): # visit시 모든 링크 제거
         self.current.next = ListNode(val=url, prev= self.current)
         self.current = self.current.next
         return None
         
-
     def back(self, steps):
         while steps >0 and self.current.prev !=None:
             steps -=1
