@@ -35,7 +35,8 @@ class Solution(object):
             
 
 
-        # best Solution
+        # best Solution 딕셔너리는 key search에 소요시간은 단 O(1) 이다 
+        
         numToIndex = {}
         for i in range(len(nums)):
             if target - nums[i] in numToIndex:
@@ -44,7 +45,7 @@ class Solution(object):
         return []
         """
 
-
+        '''
         origin_indices = {} # dictionary
 
         for idx, val in enumerate(nums):
@@ -65,6 +66,10 @@ class Solution(object):
             else:
                 return [origin_indices[nums[l]][0], origin_indices[nums[r]][-1]] # 정답은 단 1개이기에 달성시 종료 
             
+        '''
+
+        # 해시테이블 
+
 nums = [3,0,5,8,1,6,7]
 target = 6
 
