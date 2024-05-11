@@ -30,4 +30,9 @@ print(hash_d)
 
 # 딕셔너리 주요 연산 
 
-score = []
+score = {'A':90,'B':70,'C':65}
+
+if 'A' in score:  # in 함수 동작은 O(1) 매우빠른 탐색방식이다 
+    print('Yes')
+else:
+    print('No')
