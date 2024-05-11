@@ -17,7 +17,7 @@ class Solution(object):
                 if nums[i]+ nums[j] == target:
                     return [i,j]
 
-        # second access , Two Pointer l ,r , Sort 
+        # second access , Two Pointer l ,r , Sort  ,wrong 동일한  값이 들어오면 오류 발생
         nums2 = sorted(nums)
         l,r = 0,len(nums)-1
         while(l<r):
@@ -29,8 +29,12 @@ class Solution(object):
             #break point
             elif nums2[l]+nums2[r] == target:
                 return [nums.index(nums2[l]) , nums.index(nums2[r])]
+
+        # third access , dictionary 사용 
+        
             
-        """
+
+
         # best Solution
         numToIndex = {}
         for i in range(len(nums)):
@@ -38,8 +42,30 @@ class Solution(object):
                 return [numToIndex[target - nums[i]], i]
             numToIndex[nums[i]] = i
         return []
+        """
 
-nums = [3,3]
+
+        origin_indices = {} # dictionary
+
+        for idx, val in enumerate(nums):
+            if val in origin_indices:
+                origin_indices[val].append(idx)
+            else:
+                origin_indices[val] = [idx]
+
+        nums.sort()
+
+        l, r = 0, len(nums)-1 # two pointer apply 
+
+        while l < r:
+            if target > (nums[l] + nums[r]):
+                l += 1
+            elif target < (nums[l] + nums[r]):
+                r -= 1
+            else:
+                return [origin_indices[nums[l]][0], origin_indices[nums[r]][-1]] # 정답은 단 1개이기에 달성시 종료 
+            
+nums = [3,0,5,8,1,6,7]
 target = 6
 
 print(Solution.twoSum(nums,target))
