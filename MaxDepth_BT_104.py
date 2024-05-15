@@ -16,22 +16,22 @@ from collections import deque
 
 cnt = 0
 
-# 레벨 순회는 DFS로 접근하기 어려움
+# post order 방식 DFS 탐색 
 class Solution(object):
     def maxDepth(self, root):
         """
         :type root: TreeNode
         :rtype: int
         """
+        max_depth = 0
         if root is None:
-            return cnt 
-        
+            return max_depth
+
         left_cnt = Solution.maxDepth(self,root.left)
-
         right_cnt = Solution.maxDepth(self,root.right)
-        
-        print(max(left_cnt,right_cnt))
+        max_depth = max(left_cnt,right_cnt)+1 
 
+        return max_depth
 
 
 # BFS 가능하지 않을까??
