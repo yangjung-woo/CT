@@ -65,7 +65,13 @@ def BFS(root):
 
 # 트리의 순회 방법 1 BFS
 
-# 트리의 순회 방법 2 DFS 
+def DFS(root):
+    if root is None:
+        return 0
+    DFS(root.left)
+    DFS(root.right)
+
+# 트리의 순회 방법 2 DFS (w)
 
 
 # 이진탐색 O(nlogn) 시간복잡도 
