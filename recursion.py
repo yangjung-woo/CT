@@ -61,8 +61,7 @@ def BFS(root):
             queue.append(cur_node.left)
         if cur_node.right:
             queue.insert(cur_node.right) # 다음에 방문할 노드들을 큐에 저장 
-    return visited 
-
+    return visited
 
 # 트리의 순회 방법 1 BFS
 
