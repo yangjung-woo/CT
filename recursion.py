@@ -72,8 +72,28 @@ def DFS(root):
     DFS(root.right)
 
 # 트리의 순회 방법 2 DFS (w)
-
-
+def DFS_preorder(root):
+    if root is None:
+        return 0
+    
+    print(root.value)
+    DFS_preorder(root.left)
+    DFS_preorder(root.right)
+# DFS 2-1 전위순회
+def DFS_inorder(root):
+    if root is None:
+        return 0
+    DFS_inorder(root.left)
+    print(root.value)
+    DFS_inorder(root.right)
+# DFS 2-2 중위순회
+def DFS_postorder(root):
+    if root is None:
+        return 0
+    DFS_postorder(root.left)
+    DFS_postorder(root.right)
+    print(root.value)
+# DFS 2-3 후위순회
 # 이진탐색 O(nlogn) 시간복잡도 
 
 # 완전 이진트리: 마지막 level을 제외한 모든 차수가 2임 
