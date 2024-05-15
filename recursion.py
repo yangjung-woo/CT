@@ -1,6 +1,9 @@
 # 재귀함수 개념 >> DFS 구현시 반드시 필요 개념 
 # 이진트리 , DP , 완전탐색, 백트래킹에 모두 사용 
 
+from collections import deque
+
+
 def factorial(n):
     if n == 1:
         return 1
@@ -41,6 +44,30 @@ bt.root.right=Node(value=3)
 bt.root.left.left = Node(value=4)
 bt.root.left.right = Node(value=5)
 bt.root.right.right = Node(value=6)
+# 이진트리 생성 
+
+def BFS(root):
+    visited = [] # 방문을 기록할 스택
+    if root is None: # 예외1. root가 없을시 종료 
+        return 0
+    queue = deque()  # 이후 방문할 노드들을 저장할 큐 (FIFO)
+    queue.append(root)
+
+    while queue:
+        cur_node =queue.popleft()
+        visited.append(cur_node.value)
+
+        if cur_node.left:
+            queue.append(cur_node.left)
+        if cur_node.right:
+            queue.insert(cur_node.right) # 다음에 방문할 노드들을 큐에 저장 
+    return visited 
+
+
+# 트리의 순회 방법 1 BFS
+
+# 트리의 순회 방법 2 DFS 
+
 
 # 이진탐색 O(nlogn) 시간복잡도 
 
