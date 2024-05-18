@@ -20,5 +20,12 @@ DFS_graph('A')
 print(visited)
 
 
-    
+##
+def DFS_myself(curr):
+    visited.append(curr)
+
+    for v in graph[curr]:
+        if v not in visited:
+            DFS_graph(v)
+
 
