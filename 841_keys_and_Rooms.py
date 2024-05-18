@@ -19,7 +19,7 @@ Output: false
 '''
 from collections import deque
 
-rooms = [[2],[],[1]]
+rooms = [[1],[2],[3],[]]
 
 
 class Solution(object):
@@ -33,9 +33,16 @@ class Solution(object):
         visited = [False for _ in range(n)]
 
         # dfs로 풀어볼까?
-        #def dfs()
-        
+        def dfs(v):
+            visited[v] = True
+            for k in rooms[v]:
+                if visited[k] ==False:
+                    dfs(k)
+        dfs(0)
+
         # bfs로 풀어볼까?
+        ###
+        
         visited[0] = True
         queue = deque()
         queue.append(rooms[0])
@@ -47,6 +54,9 @@ class Solution(object):
                 if visited[k] ==False:
                     queue.append(rooms[k])
                     visited[k] = True
+        ###
+        
+        
 
         for i in range(n):
             if visited[i] == False:
