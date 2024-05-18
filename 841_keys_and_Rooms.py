@@ -57,11 +57,16 @@ class Solution(object):
         ###
         
         
+        ### return all(visited) : 리스트 내 모든 요소가 참이면 참 아니면 거짓
 
+        return all(visited)
+        '''
+        
         for i in range(n):
             if visited[i] == False:
                 return False
         return True 
+        '''
     
 print(Solution.canVisitAllRooms(rooms))
         
