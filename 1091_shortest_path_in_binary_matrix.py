@@ -8,7 +8,7 @@
 '''
 
 from collections import deque
-grid = [[0,0,0],[1,1,0],[1,1,0]]
+grid = [[0,1],[1,0]]
 # DFS 접근 방식은 최단거리 계산에 올바르지 않음 !! 
 def shortestPathBinaryMatrix(self, grid):
     now_len = 1
@@ -79,7 +79,7 @@ def MYSelf(grid):
     dy= [0,1,0,-1, 1,-1,1,-1]
     dx= [1,0,-1,0, 1,1,-1,-1]
 
-    if grid[0][0]==1 or grid[n-1][n-1]:
+    if grid[0][0]==1 or grid[n-1][n-1]== 1:
         return -1
     
     def bfs(start_x, start_y,start_l):
@@ -103,7 +103,8 @@ def MYSelf(grid):
 
 
     visited[0][0] = True
-    bfs(0,0,1)
+    return bfs(0,0,1)
+    
 
 print(MYSelf(grid))
 
