@@ -1,4 +1,6 @@
 # 구름 level3 하늘다리 놓기
+# 몇몇 테스트 케이스 실패 >> while 내 if elsif elsif 수정으로 성공  
+# 성공 
 
 n = int(input())
 mount_list = list(map(int,input().split()))
@@ -15,15 +17,15 @@ for m in mount_list:
         if m > stack[-1]:
 
             while(len(stack)>0):
+                
                 if stack[-1] ==m:
                     answer+=1
-                    stack.append(m)
                     break
                 elif stack[-1]< m:
                     stack.pop()
                 elif stack[-1]>m:
-                    stack.append(m)
                     break 
+            stack.append(m)
 
 print(answer)
 
