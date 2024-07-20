@@ -19,7 +19,7 @@ class Solution(object):
         longest = 0
         nums.sort()
         nums_dict ={} # O(n)
-        for n in nums:
+        for n in nums:  
             nums_dict[n] = True
 
         for cur_num in nums_dict:
